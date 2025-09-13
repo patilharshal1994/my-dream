@@ -269,8 +269,8 @@ contactStyles.textContent = `
     }
 
     .faq-question h4 {
-        color: var(--text-light);
-        margin: 0;
+        color: var(--primary-color);
+        margin: 7px;
         font-size: 1.1rem;
     }
 
