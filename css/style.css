@@ -105,9 +105,34 @@ p {
     border-bottom: 1px solid rgba(255, 107, 53, 0.1);
 }
 
+/* Global hamburger menu alignment for all pages */
+#hamburger {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+    align-items: center;
+    justify-content: center;
+}
+
+
 .navbar.scrolled {
     background: rgba(26, 26, 26, 0.98);
     box-shadow: var(--shadow-dark);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-container {
@@ -162,18 +187,7 @@ p {
     width: 100%;
 }
 
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    position: absolute;
-    /* right: 20px; */
-    /* top: 50%; */
-    transform: translateY(-50%);
-    z-index: 1001;
-    align-items: center;
-    justify-content: center;
-}
+
 
 .bar {
     width: 25px;
@@ -4887,6 +4901,23 @@ p {
         justify-content: center;
     }
     
+    /* Specific alignment for About and Services pages */
+    .about-hero ~ * .hamburger,
+    .services-hero ~ * .hamburger,
+    .about-hero .hamburger,
+    .services-hero .hamburger,
+    body:has(.about-hero) .hamburger,
+    body:has(.services-hero) .hamburger {
+        display: flex !important;
+        position: absolute !important;
+        right: 20px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 1001 !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
     /* Ensure hamburger menu is visible and clickable on all pages */
     .navbar .hamburger {
         display: flex !important;
@@ -4902,6 +4933,22 @@ p {
         align-items: center !important;
         justify-content: center !important;
     }
+    
+    /* Force hamburger alignment on About and Services pages */
+    .about-hero + * #hamburger,
+    .services-hero + * #hamburger,
+    .about-hero #hamburger,
+    .services-hero #hamburger {
+        display: flex !important;
+        position: absolute !important;
+        right: 20px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 1001 !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
     
     
     .nav-menu {
@@ -6211,12 +6258,29 @@ p {
     .hamburger {
         display: flex !important;
         position: absolute;
-        right: 50px;
+        right: 15px;
         top: 50%;
         transform: translateY(-50%);
         z-index: 1001;
         align-items: center;
         justify-content: center;
+    }
+    
+    /* Specific alignment for About and Services pages */
+    .about-hero ~ * .hamburger,
+    .services-hero ~ * .hamburger,
+    .about-hero .hamburger,
+    .services-hero .hamburger,
+    body:has(.about-hero) .hamburger,
+    body:has(.services-hero) .hamburger {
+        display: flex !important;
+        position: absolute !important;
+        right: 15px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 1001 !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
     
     .hamburger .bar {
@@ -6326,20 +6390,6 @@ p {
         margin-top: 1rem;
     }
     
-    .nav-container {
-        padding: 0 10px;
-        position: relative;
-    }
-    
-    .nav-logo h2 {
-        font-size: 1.3rem;
-    }
-    
-    .nav-link {
-        font-size: 0.9rem;
-        padding: 0.7rem 0;
-    }
-    
     .hamburger {
         display: flex !important;
         z-index: 1001;
@@ -6352,6 +6402,23 @@ p {
         cursor: pointer;
         align-items: center;
         justify-content: center;
+    }
+    
+    /* Specific alignment for About and Services pages */
+    .about-hero ~ * .hamburger,
+    .services-hero ~ * .hamburger,
+    .about-hero .hamburger,
+    .services-hero .hamburger,
+    body:has(.about-hero) .hamburger,
+    body:has(.services-hero) .hamburger {
+        display: flex !important;
+        position: absolute !important;
+        right: 15px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 1001 !important;
+        align-items: center !important;
+        justify-content: center !important;
     }
     
     .hamburger .bar {
@@ -6374,6 +6441,36 @@ p {
         align-items: center !important;
         justify-content: center !important;
     }
+    
+    /* Force hamburger alignment on About and Services pages */
+    .about-hero + * #hamburger,
+    .services-hero + * #hamburger,
+    .about-hero #hamburger,
+    .services-hero #hamburger {
+        display: flex !important;
+        position: absolute !important;
+        right: 15px !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        z-index: 1001 !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    .nav-container {
+        padding: 0 10px;
+        position: relative;
+    }
+    
+    .nav-logo h2 {
+        font-size: 1.3rem;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 0.7rem 0;
+    }
+    
     
     
     .floating-element {
